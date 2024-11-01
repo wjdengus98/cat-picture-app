@@ -3,10 +3,30 @@
 이 애플리케이션은 간단한 Express 서버를 통해 무작위 고양이 사진을 제공하며, Docker로 손쉽게 배포할 수 있습니다.
 
 # 프로젝트 구조
+cat-picture-app/
+├── docker-compose.yml            # Docker Compose 설정 파일
+├── backend/                      # 백엔드 (Express 서버)
+│   ├── Dockerfile                # 백엔드용 Dockerfile
+│   ├── package.json              # 백엔드 의존성 및 설정 파일
+│   ├── package-lock.json         # 백엔드 의존성 버전 고정 파일
+│   ├── public/                   # 백엔드 정적 파일 폴더
+│   │   └── index.html            # 백엔드 루트에 접근할 때 제공되는 기본 HTML 파일
+│   └── src/                      # 백엔드 소스 코드
+│       ├── index.js              # Express 서버 메인 파일
+│       ├── routes/
+│       │   └── catRoutes.js      # /cat 경로를 처리하는 라우터
+│       └── services/
+│           └── catService.js     # 외부 API 요청 로직
+└── frontend/                     # 프론트엔드 (React 애플리케이션)
+    ├── Dockerfile                # 프론트엔드용 Dockerfile
+    ├── package.json              # 프론트엔드 의존성 및 설정 파일
+    ├── package-lock.json         # 프론트엔드 의존성 버전 고정 파일
+    ├── public/                   # 프론트엔드 정적 파일 폴더
+    │   └── index.html            # React 애플리케이션 진입 HTML 파일
+    └── src/                      # 프론트엔드 소스 코드
+        ├── App.js                # React 메인 컴포넌트
+        └── index.js              # React 애플리케이션 진입 파일
 
-cat-picture-app/ ├── docker-compose.yml # Docker Compose 설정 파일 ├── backend/ # 백엔드 (Express 서버) │ ├── Dockerfile # 백엔드용 Dockerfile │ ├── package.json # 백엔드 의존성 및 설정 파일 │ ├── package-lock.json # 백엔드 의존성 버전 고정 파일 │ ├── public/ # 백엔드 정적 파일 폴더 │ │ └── index.html # 백엔드 루트에 접근할 때 제공되는 기본 HTML 파일 │ └── src/ # 백엔드 소스 코드 │ ├── index.js # Express 서버 메인 파일 │ ├── routes/ │ │ └── catRoutes.js # /cat 경로를 처리하는 라우터 │ ├── services/ │ │ └── catService.js # 외부 API 요청 로직 │ └── utils/ │ └── logger.js # 로그 기록 유틸리티 └── frontend/ # 프론트엔드 (React 애플리케이션) ├── Dockerfile # 프론트엔드용 Dockerfile ├── package.json # 프론트엔드 의존성 및 설정 파일 ├── package-lock.json # 프론트엔드 의존성 버전 고정 파일 ├── public/ # 프론트엔드 정적 파일 폴더 │ └── index.html # React 애플리케이션 진입 HTML 파일 └── src/ # 프론트엔드 소스 코드 ├── App.js # React 메인 컴포넌트 └── index.js # React 애플리케이션 진입 파일
-
-# 시작하기
 
 다음 설명은 Docker 환경에서 Cat Picture App을 설정하고 실행하는 방법을 안내합니다.
 
