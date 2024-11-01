@@ -3,7 +3,7 @@
 이 애플리케이션은 간단한 Express 서버를 통해 무작위 고양이 사진을 제공하며, Docker로 손쉽게 배포할 수 있습니다.
 
 # 프로젝트 구조
-![프로젝트 구조](PRImages/프로젝트 구조.png)
+![프로젝트 구조](https://github.com/wjdengus98/cat-picture-app/issues/1#issue-2628617274)
 
 
 다음 설명은 Docker 환경에서 Cat Picture App을 설정하고 실행하는 방법을 안내합니다.
