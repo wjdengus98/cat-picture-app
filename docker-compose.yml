@@ -1,0 +1,33 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: catapp-backend
+    image: catapp-backend
+    ports:
+      - '5000:5000'
+    environment:
+      - NODE_ENV=development
+    networks:
+      - cat-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: catapp-frontend
+    image: catapp-frontend
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - backend
+    networks:
+      - cat-network
+
+networks:
+  cat-network:
+    driver: bridge
